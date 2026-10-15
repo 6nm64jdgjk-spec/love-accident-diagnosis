@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160d12">
+  <meta name="description" content="あなたの恋愛で繰り返す失敗、沼りやすい相手、隠れた恋愛の癖を暴く全10問のエンタメ診断。">
+  <meta property="og:title" content="あなたの恋愛・事故物件診断">
+  <meta property="og:description" content="あなたの恋愛の致命傷、暴きます。全10問・約2分。">
+  <meta property="og:type" content="website">
+  <title>あなたの恋愛・事故物件診断</title>
+  <style>
+    :root{color-scheme:dark;--bg:#160d12;--panel:#25151d;--panel2:#311b26;--text:#fff3f5;--muted:#cbb6bf;--pink:#f3a0b3;--red:#bd344f;--line:#633044;--gold:#e5c18b}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#63273b 0%,#26131c 35%,var(--bg) 72%);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.65}
+    .wrap{width:min(740px,100%);margin:auto;padding:18px 15px 48px}
+    header{text-align:center;padding:28px 6px 22px}
+    .eyebrow{color:var(--pink);letter-spacing:.2em;font-size:.72rem;font-weight:900}
+    h1{font-size:clamp(2.1rem,9vw,3.6rem);line-height:1.1;letter-spacing:-.05em;margin:12px 0}
+    h1 span,.accent{color:var(--pink)}
+    .lead{color:var(--muted);max-width:520px;margin:0 auto 17px}
+    .pill{display:inline-block;border:1px solid #965065;color:#f7cad4;border-radius:999px;padding:5px 12px;font-size:.8rem}
+    .card{background:linear-gradient(145deg,rgba(47,27,37,.97),rgba(28,16,23,.98));border:1px solid var(--line);border-radius:22px;padding:clamp(19px,5vw,32px);box-shadow:0 18px 50px #0004}
+    .hidden{display:none!important}
+    h2{line-height:1.3}
+    .muted{color:var(--muted)}
+    .list{padding-left:1.25rem;color:var(--muted)}
+    button{font:inherit;cursor:pointer}
+    .primary,.secondary{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;border-radius:14px;padding:14px 16px;font-weight:850;transition:transform .12s}
+    button:active{transform:scale(.99)}
+    .primary{border:0;background:linear-gradient(110deg,#f6b2c0,#d84d69);color:#260c15;box-shadow:0 8px 24px #b9435933}
+    .secondary{border:1px solid var(--line);background:#21131a;color:var(--text);margin-top:10px}
+    .progress-row{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem;margin-bottom:10px}
+    .track{height:6px;border-radius:999px;background:#4b2a38;overflow:hidden;margin-bottom:25px}
+    .bar{height:100%;width:10%;background:linear-gradient(90deg,#c53251,#f4a7b7);transition:width .2s}
+    .q-title{font-size:clamp(1.3rem,5vw,1.7rem);margin:0 0 20px}
+    .answers{display:grid;gap:10px}
+    .answer{text-align:left;color:var(--text);background:#21131a;border:1px solid #65364a;padding:15px;border-radius:14px;width:100%}
+    .answer:hover,.answer:focus-visible{border-color:var(--pink);background:#3a202c;outline:none}
+    .letter{color:var(--pink);font-weight:900;margin-right:10px}
+    .kicker{color:var(--pink);font-weight:900;letter-spacing:.14em;font-size:.75rem}
+    .result-title{font-size:clamp(1.75rem,7vw,2.7rem);line-height:1.2;margin:8px 0 12px}
+    .subtitle{font-size:1.06rem;color:#f6c5d0;font-weight:800}
+    .result-box{border-left:3px solid var(--pink);background:#1b1016;padding:14px 15px;margin:13px 0;border-radius:0 12px 12px 0}
+    .result-box h3{font-size:.83rem;color:var(--pink);margin:0 0 5px}
+    .result-box p{margin:0}
+    .scoretag{display:inline-block;background:#4a2534;color:#f9d6de;border:1px solid #824157;border-radius:8px;padding:4px 9px;font-size:.8rem;margin:3px 4px 3px 0}
+    .share-card{position:relative;overflow:hidden;border:1px solid #b24b65;border-radius:18px;padding:22px 19px;margin:20px 0;background:radial-gradient(circle at 100% 0%,#6b233b 0,#2a1520 43%,#130b10 100%);min-height:225px}
+    .share-card:before{content:"";position:absolute;width:160px;height:160px;border:1px solid #c66b80;border-radius:50%;right:-65px;top:-65px;box-shadow:0 0 0 15px #c66b8014,0 0 0 31px #c66b800c}
+    .share-card>*{position:relative}
+    .share-brand{font-size:.68rem;letter-spacing:.16em;color:#f0a7b7;font-weight:900}
+    .share-title{font-size:clamp(1.35rem,6vw,2rem);line-height:1.2;font-weight:950;margin:18px 0 8px;max-width:440px}
+    .share-line{color:#f5d5dc;font-weight:650;max-width:440px}
+    .share-hash{font-size:.76rem;color:#d7a6b2;margin-top:20px}
+    .actions{display:grid;gap:10px}
+    .fine{font-size:.79rem;color:var(--muted)}
+    .section-title{margin:25px 0 10px;font-size:1rem;color:#f4bdca}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mini{background:#1c1117;border:1px solid #553041;border-radius:13px;padding:12px}
+    .mini strong{display:block;color:var(--pink);font-size:.83rem;margin-bottom:5px}
+    .mini span{font-size:.9rem}
+    footer{text-align:center;color:#a88e98;font-size:.77rem;padding:20px 8px 0}
+    @media(max-width:420px){.mini-grid{grid-template-columns:1fr}.wrap{padding-left:12px;padding-right:12px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="eyebrow">LOVE × DARKNESS × CONFESSION</div>
+    <h1>あなたの恋愛<br><span>事故物件診断</span></h1>
+    <p class="lead">好きな人の前でだけ、なぜか自分を大切にできなくなる。その理由を暴きます。</p>
+    <span class="pill">全10問・約2分・無料</span>
+  </header>
+
+  <section id="intro" class="card">
+    <div class="kicker">WARNING: LOVE IS BLIND</div>
+    <h2>あなたの恋愛の“致命傷”は？</h2>
+    <p>恋愛で繰り返す失敗、沼りやすい相手、自分では気づきにくい癖。ちょっと痛いところまで言語化するエンタメ診断です。</p>
+    <ul class="list">
+      <li>直感で選ぶのがコツ。正解・不正解はありません。</li>
+      <li>結果は8タイプ。友達や恋人と比べても楽しめます。</li>
+      <li>回答内容はサーバーに送信・保存されません。</li>
+    </ul>
+    <button id="start" class="primary">恋愛の闇を暴く →</button>
+  </section>
+
+  <section id="quiz" class="card hidden" aria-live="polite">
+    <div class="progress-row"><span id="progressText">QUESTION 1 / 10</span><span id="percent">10%</span></div>
+    <div class="track"><div id="bar" class="bar"></div></div>
+    <h2 id="question" class="q-title"></h2>
+    <div id="answers" class="answers"></div>
+    <p class="fine">※いちばん自分に近いものを選んでね。</p>
+  </section>
+
+  <section id="result" class="card hidden" aria-live="polite">
+    <div class="kicker">YOUR DARK LOVE TYPE</div>
+    <h2 id="resultTitle" class="result-title"></h2>
+    <div id="resultSubtitle" class="subtitle"></div>
+    <p id="resultDescription"></p>
+    <div class="result-box"><h3>あなたの恋愛の致命傷</h3><p id="fatal"></p></div>
+    <div class="result-box"><h3>沼りやすい相手</h3><p id="target"></p></div>
+    <div class="result-box"><h3>他人から見たあなた</h3><p id="outside"></p></div>
+    <div class="result-box"><h3>抜け出すための一言</h3><p id="advice"></p></div>
+    <h3 class="section-title">あなたと相性が悪くなりやすい恋愛パターン</h3>
+    <div id="warningTags"></div>
+    <div class="share-card" id="shareCard">
+      <div class="share-brand">LOVE ACCIDENT REPORT / 恋愛事故調査書</div>
+      <div class="share-title" id="shareName"></div>
+      <div class="share-line" id="shareLine"></div>
+      <div class="share-hash">#恋愛事故物件診断　#恋愛の闇</div>
+    </div>
+    <div class="actions">
+      <button id="saveImage" class="primary">結果カードを画像で保存 ↓</button>
+      <button id="shareX" class="secondary">診断結果をXでシェア ↗</button>
+      <button id="copy" class="secondary">シェア文をコピー</button>
+      <button id="friend" class="secondary">友達に診断をすすめる</button>
+      <button id="again" class="secondary">もう一度診断する</button>
+    </div>
+    <p class="fine">画像はこの端末で生成します。診断結果を含むリンクを友達に送ると、その結果ページが開きます。友達自身の結果を知るには、最初から診断してもらってね。</p>
+  </section>
+  <footer>恋愛・事故物件診断｜エンタメ目的のオリジナル診断<br>回答内容は保存されません。医療・心理検査ではありません。</footer>
+</main>
+<script>
+(() => {
+  const types = {
+    tester:{name:"愛されたいのに試し行為型",subtitle:"愛情を確認するつもりで、愛情を削ってしまう。",description:"本当は安心したいだけなのに、相手の気持ちを確かめたくて遠回しな言い方をしたり、わざと平気なふりをしたり。相手が察してくれないと「それくらい分かってよ」と傷つきがち。",fatal:"欲しいものを素直に伝える前に、相手が自分をどれだけ好きかのテストを始めてしまうこと。",target:"言葉が少なく、追いかけないと気持ちが見えない人。",outside:"平気そうに見えるのに、内心では相手の一言を何度も反芻している人。",advice:"試す前に、お願いをひとつだけ具体的に伝えてみる。察してくれるかより、話し合えるかを見て。",tags:["察してほしい","不安を隠す","愛情確認"]},
+    potential:{name:"可能性に恋する型",subtitle:"好きなのは今の相手？ それとも未来の相手？",description:"相手の欠点を見ても「本当はいい人」「今は余裕がないだけ」と、まだ見ぬ未来に期待できるタイプ。相手の現状より、変わったあとの姿を好きになってしまうことがある。",fatal:"実際にしてくれたことより、「いつかしてくれるはず」に大きな価値を置いてしまうこと。",target:"口では大きなことを言うけれど、行動がなかなか追いつかない人。",outside:"他人には冷静なアドバイスができるのに、自分の恋愛では希望を捨てられない人。",advice:"未来の約束ではなく、直近1か月の行動を見てみる。可能性は、相手が自分で育てるもの。",tags:["いつか変わる","口約束","理想の未来"]},
+    rescuer:{name:"救済ヒロイン型",subtitle:"恋人になりたいのに、いつの間にか保護者になっている。",description:"相手の弱さや孤独を見つけると、放っておけなくなるタイプ。自分だけが理解者でいたい気持ちが、気づかないうちに関係を支える役割へ変わっていくことも。",fatal:"相手を理解することと、相手の問題を引き受けることが混ざってしまう。",target:"事情が多く、いつも誰かに助けてもらう必要がある人。",outside:"面倒見がよく頼れるけれど、自分が助けてほしいときほど黙ってしまう人。",advice:"相手の悩みを聞いたあと、自分の心と生活に余裕が残っているか確認して。愛情は救助活動ではない。",tags:["私がいなきゃ","世話を焼く","相手の問題"]},
+    chaser:{name:"追いかけ中毒型",subtitle:"手に入らないから魅力的なのか、魅力的だから手に入らないのか。",description:"距離がある相手ほど気になり、反応が薄いと余計に考えてしまうタイプ。たまに優しくされると、その一回が何倍にも大きく感じられることがある。",fatal:"相手に選ばれることが目標になり、自分が相手を好きかどうかを後回しにすること。",target:"気分や都合で距離が変わり、好意が安定して見えない人。",outside:"恋愛相談では「そんな人やめな」と言えるのに、自分の番になると追いかけてしまう人。",advice:"「この人に選ばれたい？」だけでなく、「この人といる自分は好き？」も同じくらい大事にして。",tags:["追いLINE","反応待ち","選ばれたい"]},
+    history:{name:"情で別れられない型",subtitle:"思い出が大切なことと、関係を続けるべきことは別。",description:"楽しかった日々や、一緒に乗り越えたことを簡単には捨てられないタイプ。関係が苦しくなっても、積み重ねた時間を無駄にしたくなくて決断を先延ばしにしがち。",fatal:"過去に大切だったことを理由に、今の苦しさを我慢し続けてしまうこと。",target:"長い歴史や共有した秘密を理由に、関係を曖昧にし続ける人。",outside:"もう答えは出ている気がするのに、思い出に最後の決定権を渡してしまう人。",advice:"出会ったばかりの友達が同じ扱いを受けていたら、何と声をかけるか考えてみて。",tags:["情がある","過去を美化","決断を先延ばし"]},
+    sacrifice:{name:"自己犠牲型",subtitle:"嫌われない努力をしているうちに、自分の本音が行方不明。",description:"相手の希望を優先するのが得意で、衝突を避けるために自分の希望を飲み込んでしまいがち。相手に合わせている自覚が薄く、限界が来てから一気に疲れることも。",fatal:"我慢できることを、我慢しなければいけないことだと思ってしまう。",target:"自分の希望ははっきり伝えるのに、あなたの希望は聞き返さない人。",outside:"「大丈夫」が口癖。本当は嫌だったことを、後からひとりで反省会する人。",advice:"小さな「私はこうしたい」を言ってみて。その反応から、安心して本音を出せる相手か見て。",tags:["嫌われたくない","本音を飲み込む","我慢が標準"]},
+    idealizer:{name:"理想化フィルター型",subtitle:"一瞬の優しさが、その人の全部に見えてしまう。",description:"相手のいいところを見つけるのが上手なぶん、嫌なことがあっても「でも、あのときは優しかった」と帳消しにしたくなるタイプ。思い出の中の相手が、現実より魅力的になることも。",fatal:"相手の優しい瞬間を、その人の普段の行動より重く評価してしまうこと。",target:"たまに大きな優しさを見せる一方で、普段の言動にムラがある人。",outside:"違和感には気づいているのに、相手のいいところを見つけて自分を納得させる人。",advice:"特別な日の優しさだけでなく、何でもない日の扱われ方を観察してみて。",tags:["優しさを帳消し券に","違和感を無視","思い出補正"]},
+    avoidant:{name:"逃げ腰の親密回避型",subtitle:"近づきたい。でも、本当に近づかれると逃げたくなる。",description:"恋愛の始まりや、少し距離のある関係は楽しめるのに、相手の期待が見えたり、関係が深まったりすると急に息苦しくなることがある。自由を守りたい気持ちと、親密さを求める気持ちがぶつかりやすい。",fatal:"距離を置きたい気持ちを、相手への好意がない証拠だと即決してしまうこと。",target:"距離感を急に詰める人や、あなたの一人の時間を尊重しない人。",outside:"ひとりが好きと言うけれど、ちゃんと分かってくれる相手は欲しい人。",advice:"別れを決める前に、何が息苦しいのか言葉にしてみる。必要なのは別れではなく、ペースの調整かもしれない。",tags:["距離が欲しい","急に冷める","自由と親密さ"]}
+  };
+  const questions=[
+    {q:"好きな人の返信が、急に遅くなった。どうする？",a:[["tester","平気なふりをしつつ、相手の反応を試す"],["chaser","スマホを何度も見て、理由を考え続ける"],["sacrifice","忙しいんだろうな、と自分の気持ちをしまう"],["avoidant","面倒になって、こちらも返信する気がなくなる"]]},
+    {q:"相手の「ここは嫌だな」という部分を見つけたら？",a:[["potential","今はそうでも、いつか変わるかもしれないと思う"],["idealizer","でも優しいところもあるし、と良い面を思い出す"],["rescuer","そうなった理由や事情を理解しようとする"],["avoidant","一度気になると、急に全部が嫌に見えてくる"]]},
+    {q:"恋人にされると一番うれしいのは？",a:[["tester","不安にさせないよう、言葉で気持ちを伝えてくれる"],["history","何年経っても変わらず、自分を大事にしてくれる"],["rescuer","弱いところや情けないところも見せてくれる"],["chaser","普段はクールなのに、自分にだけ特別な顔を見せる"]]},
+    {q:"相手から「別れたくない」と言われたら？",a:[["history","今までの思い出を考えて、すぐには決められない"],["potential","今度こそ変わってくれるかもしれないと思う"],["sacrifice","相手を傷つけるのが怖くて、気持ちが揺らぐ"],["avoidant","引き止められるほど、逃げたくなる"]]},
+    {q:"自分ばかり頑張っていると感じたら？",a:[["tester","少し引いて、相手が追ってくるか見てしまう"],["rescuer","相手も大変なんだろうと、もう少し支える"],["sacrifice","自分が頑張れば丸く収まると思う"],["chaser","もっと愛されるために何をすればいいか考える"]]},
+    {q:"元恋人を思い出してしまうのは、どんなとき？",a:[["history","一緒に行った場所や、積み重ねた思い出に触れたとき"],["idealizer","優しくしてくれた場面をふと思い出したとき"],["chaser","相手が楽しそうにしているのを見たとき"],["potential","あのとき別の選択をしていたら、と未来を想像したとき"]]},
+    {q:"傷つくことをされたあと、急に優しくされたら？",a:[["idealizer","やっぱり本当は優しい人なんだと思いたくなる"],["rescuer","相手にも事情があったのかもしれないと考える"],["history","楽しかった頃に戻れる可能性を捨てきれない"],["tester","今度こそ本気か、しばらく様子を見る"]]},
+    {q:"恋愛でいちばん怖いのは？",a:[["tester","相手にとって自分が大切じゃないと知ること"],["chaser","自分が選ばれず、他の誰かが選ばれること"],["sacrifice","本音を言ったせいで嫌われること"],["avoidant","自分の時間や自由がなくなってしまうこと"]]},
+    {q:"好きな人との距離が急に縮まったら？",a:[["avoidant","うれしい反面、急に相手の欠点が気になり始める"],["sacrifice","相手の期待に応えようと、無理をしてでも合わせる"],["rescuer","もっと相手のことを知り、支えになりたくなる"],["chaser","やっと手に入ったと思うと、少し物足りなくなる"]]},
+    {q:"恋愛で何度も繰り返してしまうことは？",a:[["potential","相手が変わることを期待して待ち続ける"],["history","もう無理かもと思っても、なかなか別れられない"],["idealizer","嫌なことをされても、良い思い出で上書きする"],["tester","本音を言わず、相手に察してほしいと思う"]]}
+  ];
+  const $=id=>document.getElementById(id);
+  let current=0,scores={};
+  const order=Object.keys(types);
+  function reset(){scores={};order.forEach(k=>scores[k]=0);current=0}
+  function showOnly(el){[$("intro"),$("quiz"),$("result")].forEach(x=>x.classList.add("hidden"));el.classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})}
+  function renderQuestion(){
+    const item=questions[current],n=current+1;
+    $("progressText").textContent=`QUESTION ${n} / ${questions.length}`;$("percent").textContent=`${Math.round(n/questions.length*100)}%`;$("bar").style.width=`${n/questions.length*100}%`;$("question").textContent=item.q;$("answers").replaceChildren();
+    item.a.forEach((a,i)=>{const b=document.createElement("button");b.type="button";b.className="answer";const l=document.createElement("span");l.className="letter";l.textContent=["A","B","C","D"][i];b.append(l,document.createTextNode(a[1]));b.addEventListener("click",()=>{scores[a[0]]++;current++;current<questions.length?renderQuestion():showResult()});$("answers").append(b)});
+  }
+  function getWinner(){return order.reduce((best,k)=>scores[k]>scores[best]?k:best,order[0])}
+  function resultUrl(key){const u=new URL(location.href);u.searchParams.set("type",key);return u.toString()}
+  function showResult(forced){
+    const key=types[forced]?forced:getWinner(),t=types[key];
+    $("resultTitle").textContent=t.name;$("resultSubtitle").textContent=t.subtitle;$("resultDescription").textContent=t.description;$("fatal").textContent=t.fatal;$("target").textContent=t.target;$("outside").textContent=t.outside;$("advice").textContent=t.advice;$("shareName").textContent=t.name;$("shareLine").textContent=t.subtitle;$("warningTags").replaceChildren();
+    t.tags.forEach(tag=>{const s=document.createElement("span");s.className="scoretag";s.textContent=tag;$("warningTags").append(s)});
+    $("result").dataset.type=key;showOnly($("result"));history.replaceState({}, "", resultUrl(key));
+  }
+  function shareText(){
+    const key=$("result").dataset.type,t=types[key];
+    return `私の恋愛事故物件タイプは「${t.name}」でした。\n${t.subtitle}\nあなたの恋愛の致命傷も暴いてみて。\n#恋愛事故物件診断\n${resultUrl(key)}`;
+  }
+  function start(){reset();const u=new URL(location.href);u.searchParams.delete("type");history.replaceState({},"",u);showOnly($("quiz"));renderQuestion()}
+  $("start").addEventListener("click",start);
+  $("again").addEventListener("click",()=>{const u=new URL(location.href);u.searchParams.delete("type");history.replaceState({},"",u);showOnly($("intro"))});
+  $("shareX").addEventListener("click",()=>window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(shareText()),"_blank","noopener,noreferrer"));
+  $("copy").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(shareText());$("copy").textContent="コピーしました ✓"}catch(e){window.prompt("以下をコピーしてください",shareText())}});
+  $("friend").addEventListener("click",async()=>{const text=`恋愛の闇を暴く診断見つけた。あなたの恋愛の致命傷も調べてみて。\n${location.origin+location.pathname}\n#恋愛事故物件診断`;try{await navigator.clipboard.writeText(text);$("friend").textContent="友達に送る文章をコピーしました ✓"}catch(e){window.prompt("友達に送る文章をコピーしてね",text)}});
+  $("saveImage").addEventListener("click",()=>{
+    const key=$("result").dataset.type,t=types[key];
+    const canvas=document.createElement("canvas");canvas.width=1080;canvas.height=1350;const c=canvas.getContext("2d");
+    const g=c.createLinearGradient(0,0,1080,1350);g.addColorStop(0,"#64243a");g.addColorStop(.48,"#291520");g.addColorStop(1,"#10090e");c.fillStyle=g;c.fillRect(0,0,1080,1350);
+    c.strokeStyle="#b95a73";c.lineWidth=3;c.strokeRect(35,35,1010,1280);
+    c.strokeStyle="#b95a7344";c.lineWidth=2;for(let r=90;r<260;r+=35){c.beginPath();c.arc(1000,80,r,0,Math.PI*2);c.stroke()}
+    c.textAlign="left";c.fillStyle="#f3a0b3";c.font="bold 28px sans-serif";c.fillText("LOVE ACCIDENT REPORT",80,115);
+    c.fillStyle="#f7d5dd";c.font="bold 25px sans-serif";c.fillText("あなたの恋愛・事故物件診断",80,175);
+    c.fillStyle="#fff3f5";let title=t.name;let font=title.length>14?48:58;c.font=`900 ${font}px sans-serif`;
+    const maxW=900;let lines=[],line="";for(const ch of title){if(c.measureText(line+ch).width>maxW){lines.push(line);line=ch}else line+=ch}if(line)lines.push(line);
+    lines.slice(0,3).forEach((ln,i)=>c.fillText(ln,80,290+i*75));
+    const sy=330+Math.min(lines.length,3)*75;c.fillStyle="#f3b9c6";c.font="bold 31px sans-serif";wrapText(c,t.subtitle,80,sy,890,48,2);
+    c.fillStyle="#e9d5db";c.font="28px sans-serif";c.fillText("あなたの恋愛の致命傷",80,sy+155);
+    c.fillStyle="#fff3f5";c.font="26px sans-serif";wrapText(c,t.fatal,80,sy+205,890,43,4);
+    c.fillStyle="#f3a0b3";c.font="bold 27px sans-serif";c.fillText("#恋愛事故物件診断",80,1195);
+    c.fillStyle="#cbb6bf";c.font="22px sans-serif";c.fillText("恋愛の闇、暴きます。",80,1245);
+    c.fillStyle="#cbb6bf";c.font="18px sans-serif";c.fillText("エンタメ診断 / love accident diagnosis",80,1280);
+    canvas.toBlob(blob=>{if(!blob){alert("画像を生成できませんでした。もう一度お試しください。");return}const a=document.createElement("a");const url=URL.createObjectURL(blob);a.href=url;a.download="恋愛事故物件診断.png";document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url)},"image/png");
+  });
+  function wrapText(ctx,text,x,y,maxWidth,lineHeight,maxLines){let line="",count=0;for(const ch of text){if(ctx.measureText(line+ch).width>maxWidth){ctx.fillText(line,x,y+count*lineHeight);count++;line=ch;if(count>=maxLines)return}else line+=ch}if(line&&count<maxLines)ctx.fillText(line,x,y+count*lineHeight)}
+  const shared=new URLSearchParams(location.search).get("type");if(types[shared])showResult(shared);
+})();
+</script>
+</body>
+</html>
