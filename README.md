@@ -1,1 +1,0 @@
-# love-accident-diagnosis
